@@ -21,7 +21,7 @@
       placeholder="число 2"
     />
     <p>Сумма:</p>
-    <div>{{ sum }}</div>
+    <div>{{ result }}</div>
   </div>
 </template>
 
@@ -32,28 +32,28 @@ export default {
     return {
       operand1: 0,
       operand2: 0,
-      sum: 0,
+      result: 0,
     };
   },
   methods: {
     summary() {
-      this.sum = this.operand1 + this.operand2;
+      this.result = this.operand1 + this.operand2;
     },
     subtraction() {
-      this.sum = this.operand1 - this.operand2;
+      this.result = this.operand1 - this.operand2;
     },
     multiply() {
-      this.sum = this.operand1 * this.operand2;
+      this.result = this.operand1 * this.operand2;
     },
     division() {
       if (this.operand2 === 0) {
-        this.sum = "Ошибка! Нельзя делить на ноль!";
+        this.result = "Ошибка! Нельзя делить на ноль!";
       } else {
-        this.sum = parseInt(this.operand1 / this.operand2);
+        this.result = parseInt(this.operand1 / this.operand2);
       }
     },
     exponentiation() {
-      this.sum = this.operand1 ** this.operand2;
+      this.result = this.operand1 ** this.operand2;
     },
   },
 };
