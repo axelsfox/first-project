@@ -8,18 +8,25 @@
       placeholder="число 1"
     />
     <div class="mathBtnBox">
-      <button class="mathBtn" @click="calculate('+')">+</button>
-      <button class="mathBtn" @click="calculate('-')">-</button>
-      <button class="mathBtn" @click="calculate('*')">*</button>
-      <button class="mathBtn" @click="calculate('/')">/</button>
-      <button class="mathBtn" @click="calculate('^')">^</button>
+      <button
+        class="mathBtn"
+        v-for="operand in operands"
+        :key="operand"
+        :alt="operand"
+        v-bind:title="operand"
+        @click="calculate(operand)"
+      >
+        {{ operand }}
+      </button>
     </div>
     <div v-if="error">Ошибка! {{ error }}</div>
 
     <div class="strange-message">
       <template v-if="result < 0">Получилось отрицательное число</template>
       <template v-else-if="result < 100">Результат в первой сотне</template>
-      <template v-else>Получилось слишком большое число</template>
+      <template v-else-if="result > 100"
+        >Получилось слишком большое число</template
+      >
     </div>
 
     <input
@@ -28,8 +35,10 @@
       type="text"
       placeholder="число 2"
     />
-    <p>Сумма:</p>
-    <div>{{ result }}</div>
+    <p>Результат: {{ result }}</p>
+    <div class="logs">
+      <div v-for="(log, id) in logs" v-bind:key="id">{{ log }}</div>
+    </div>
   </div>
 </template>
 
@@ -42,6 +51,8 @@ export default {
       operand2: 0,
       result: 0,
       error: "",
+      operands: ["+", "-", "*", "/", "^"],
+      logs: {},
     };
   },
   methods: {
@@ -84,6 +95,9 @@ export default {
           this.exponentiation();
           break;
       }
+      this.logs[
+        Date.now()
+      ] = `${this.operand1}${operation}${this.operand2}=${this.result}`;
     },
   },
 };
