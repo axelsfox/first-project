@@ -8,12 +8,20 @@
       placeholder="число 1"
     />
     <div class="mathBtnBox">
-      <button class="mathBtn" @click="summary">+</button>
-      <button class="mathBtn" @click="subtraction">-</button>
-      <button class="mathBtn" @click="multiply">*</button>
-      <button class="mathBtn" @click="division">/</button>
-      <button class="mathBtn" @click="exponentiation">^</button>
+      <button class="mathBtn" @click="calculate('+')">+</button>
+      <button class="mathBtn" @click="calculate('-')">-</button>
+      <button class="mathBtn" @click="calculate('*')">*</button>
+      <button class="mathBtn" @click="calculate('/')">/</button>
+      <button class="mathBtn" @click="calculate('^')">^</button>
     </div>
+    <div v-if="error">Ошибка! {{ error }}</div>
+
+    <div class="strange-message">
+      <template v-if="result < 0">Получилось отрицательное число</template>
+      <template v-else-if="result < 100">Результат в первой сотне</template>
+      <template v-else>Получилось слишком большое число</template>
+    </div>
+
     <input
       class="inputField"
       v-model.number.trim="operand2"
@@ -33,6 +41,7 @@ export default {
       operand1: 0,
       operand2: 0,
       result: 0,
+      error: "",
     };
   },
   methods: {
@@ -47,13 +56,34 @@ export default {
     },
     division() {
       if (this.operand2 === 0) {
-        this.result = "Ошибка! Нельзя делить на ноль!";
+        this.error = "На ноль делить нельзя!";
       } else {
         this.result = parseInt(this.operand1 / this.operand2);
       }
     },
     exponentiation() {
       this.result = this.operand1 ** this.operand2;
+    },
+
+    calculate(operation = "+") {
+      this.error = "";
+      switch (operation) {
+        case "+":
+          this.summary();
+          break;
+        case "-":
+          this.subtraction();
+          break;
+        case "*":
+          this.multiply();
+          break;
+        case "/":
+          this.division();
+          break;
+        case "^":
+          this.exponentiation();
+          break;
+      }
     },
   },
 };
