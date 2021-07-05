@@ -1,32 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div :class="[$style.wrapper]">
+    <header>
+      <div :class="[$style.title]">My personal costs</div>
+    </header>
+    <main>
+      <PaymentsDisplay :items="paymentsList" />
+    </main>
   </div>
 </template>
+ 
+<script>
+import PaymentsDisplay from "./components/PaymentsDisplay";
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+export default {
+  components: {
+    PaymentsDisplay,
+  },
 
-#nav {
-  padding: 30px;
+  data() {
+    return {
+      paymentsList: [],
+    };
+  },
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  methods: {
+    fetchData() {
+      return [
+        {
+          date: "28.03.2020",
+          category: "Food",
+          value: 169,
+        },
+        {
+          date: "24.03.2020",
+          category: "Transport",
+          value: 360,
+        },
+        {
+          date: "24.03.2020",
+          category: "Food",
+          value: 532,
+        },
+      ];
+    },
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+  created() {
+    this.paymentsList = this.fetchData();
+  },
+};
+</script>
+ 
+<style lang="scss" module>
 </style>

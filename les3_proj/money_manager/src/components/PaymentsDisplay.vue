@@ -6,7 +6,12 @@
  
 <script>
 export default {
-  props: ["items"],
+  props: {
+    items: {
+      tupe: Array,
+      default: [],
+    },
+  },
 };
 </script>
  
