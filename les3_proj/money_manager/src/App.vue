@@ -1,11 +1,11 @@
 <template>
-  <div :class="[$style.wrapper]">
-    <header>
-      <div :class="[$style.title]">My personal costs</div>
-    </header>
-    <main>
+  <div id="app">
+    <div class="header">
+      <h1>My personal costs</h1>
+    </div>
+    <div class="wrapper">
       <PaymentsDisplay :items="paymentsList" />
-    </main>
+    </div>
   </div>
 </template>
  
@@ -13,38 +13,41 @@
 import PaymentsDisplay from "./components/PaymentsDisplay";
 
 export default {
+  name: "App",
   components: {
     PaymentsDisplay,
   },
-
   data() {
     return {
       paymentsList: [],
     };
   },
-
   methods: {
     fetchData() {
       return [
         {
-          date: "28.03.2020",
+          date: "12.03.2021",
           category: "Food",
-          value: 169,
+          value: 180,
         },
         {
-          date: "24.03.2020",
-          category: "Transport",
-          value: 360,
+          date: "12.03.2021",
+          category: "Internet",
+          value: 100,
         },
         {
-          date: "24.03.2020",
+          date: "14.03.2021",
           category: "Food",
-          value: 532,
+          value: 300,
+        },
+        {
+          date: "28.05.2021",
+          category: "Sport",
+          value: 180,
         },
       ];
     },
   },
-
   created() {
     this.paymentsList = this.fetchData();
   },

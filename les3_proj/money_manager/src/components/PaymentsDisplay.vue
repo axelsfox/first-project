@@ -1,15 +1,18 @@
 <template>
-  <div :class="[$style.wrapper]">
-    {{ items }}
+  <div class="List">
+    <div class="item" v-for="(item, idx) in items" :key="idx">
+      {{ item }}
+    </div>
   </div>
 </template>
  
 <script>
 export default {
+  name: "PaymentsDisplay",
   props: {
     items: {
-      tupe: Array,
-      default: [],
+      type: Array,
+      default: () => [],
     },
   },
 };
