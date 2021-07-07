@@ -20,12 +20,31 @@
 <script>
 export default {
   name: "PaymentsDisplay",
+  data() {
+    return {
+      filteredpages: [],
+    };
+  },
   props: {
     items: {
       type: Array,
       default: () => [],
     },
+    page: {
+      type: Number,
+      default: 1,
+    },
   },
+  //methods: {
+  //  newPages(value) {
+  //    let j = 5;
+  //    let i = j - 5;
+  //    for (i; i <= j; i++) {
+  //      this.filteredpages.push(value[i]);
+  //    }
+  //    return this.filteredpages;
+  //  },
+  //},
 };
 </script>
  

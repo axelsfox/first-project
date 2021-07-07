@@ -5,7 +5,8 @@
     </div>
     <div class="wrapper">
       <AddPaymentForm @addNewPayment="addNewPaymentDate" />
-      <PaymentsDisplay :items="paymentsList" />
+      <PaymentsDisplay :items="paymentsList" :page="page" />
+      <Pagenathion :items="paymentsList" @choisenPage="choisenPage" />
     </div>
   </div>
 </template>
@@ -13,22 +14,29 @@
 <script>
 import PaymentsDisplay from "./components/PaymentsDisplay";
 import AddPaymentForm from "./components/AddPaymentForm.vue";
+import Pagenathion from "./components/Pagenathion.vue";
 
 export default {
   name: "App",
   components: {
     PaymentsDisplay,
     AddPaymentForm,
+    Pagenathion,
   },
   data() {
     return {
       paymentsList: [],
+      page: 0,
     };
   },
   methods: {
     addNewPaymentDate(value) {
       console.log(value);
       this.paymentsList = [...this.paymentsList, value];
+    },
+    choisenPage(value) {
+      this.page = value;
+      console.log("выбрана страница" + value);
     },
     //fetchData() {
     //  return [
