@@ -1,7 +1,7 @@
 <template>
   <div class="List">
-    <table>
-      <tr>
+    <table class="main__table">
+      <tr table__header>
         <th>#</th>
         <th>Date</th>
         <th>Category</th>
