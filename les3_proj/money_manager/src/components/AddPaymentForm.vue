@@ -85,7 +85,7 @@ export default {
   margin: 10px 0px;
   height: 30px;
   padding: 5px 10px;
-  border: rgb(95, 94, 94) transparent 1px;
+  border: #d3d3d3 solid 1px;
 }
 .svbtn {
   background-color: #399;

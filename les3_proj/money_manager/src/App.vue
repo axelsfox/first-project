@@ -63,7 +63,7 @@ export default {
  <style>
 .header {
   margin: 0px 30px;
-  color: rgb(53, 53, 53);
+  color: black;
   font-size: 18px;
 }
 </style>
