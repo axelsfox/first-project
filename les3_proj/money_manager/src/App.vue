@@ -12,7 +12,7 @@
 </template>
  
 <script>
-import { mapMutations } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 import PaymentsDisplay from "./components/PaymentsDisplay";
 import AddPaymentForm from "./components/AddPaymentForm.vue";
 
@@ -29,33 +29,34 @@ export default {
   },
   methods: {
     ...mapMutations(["setPaymentsListData"]),
+    ...mapActions(["fetchData"]),
     // addNewPaymentDate(value) {
     //  this.paymentsList = [...this.paymentsList, value];
     //},
-    fetchData() {
-      return [
-        {
-          date: "12.03.2021",
-          category: "Food",
-          value: 180,
-        },
-        {
-          date: "12.03.2021",
-          category: "Internet",
-          value: 100,
-        },
-        {
-          date: "14.03.2021",
-          category: "Food",
-          value: 300,
-        },
-        {
-          date: "28.05.2021",
-          category: "Sport",
-          value: 180,
-        },
-      ];
-    },
+
+    //fetchData() {
+    //  return [
+    //    {
+    //      date: "12.03.2021",
+    //     category: "Food",
+    //      value: 180,
+    //    },
+    //   {
+    //       date: "12.03.2021",
+    //      category: "Internet",
+    //    },
+    //    {
+    //     date: "14.03.2021",
+    //      category: "Food",
+    //      value: 300,
+    //   },
+    //    {
+    //     date: "28.05.2021",
+    //      category: "Sport",
+    //     value: 180,
+    //    },
+    //  ];
+    //},
   },
   computed: {
     paymentList() {
@@ -66,7 +67,8 @@ export default {
   created() {
     //this.$store.commit("setPaymentsListData", this.fetchData());
     //this.paymentsList = this.fetchData();
-    this.setPaymentsListData(this.fetchData());
+    //this.setPaymentsListData(this.fetchData());
+    this.fetchData();
   },
 };
 </script>
