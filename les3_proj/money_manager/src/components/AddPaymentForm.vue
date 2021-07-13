@@ -51,8 +51,8 @@ export default {
         category,
         date: this.date || this.getCurrentDate(),
       };
-      console.log(data);
-      this.$emit("addNewPayment", data);
+      this.$store.commit("addNewPamenttoStore", data);
+      //this.$emit("addNewPayment", data);
     },
   },
 };

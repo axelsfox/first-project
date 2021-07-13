@@ -4,13 +4,15 @@
       <h1>My personal costs</h1>
     </div>
     <div class="wrapper">
-      <AddPaymentForm @addNewPayment="addNewPaymentDate" />
-      <PaymentsDisplay :items="paymentsList" :page="page" />
+      <!--<AddPaymentForm @addNewPayment="addNewPaymentDate" />-->
+      <AddPaymentForm />
+      <PaymentsDisplay :items="paymentList" />
     </div>
   </div>
 </template>
  
 <script>
+import { mapMutations } from "vuex";
 import PaymentsDisplay from "./components/PaymentsDisplay";
 import AddPaymentForm from "./components/AddPaymentForm.vue";
 
@@ -22,15 +24,14 @@ export default {
   },
   data() {
     return {
-      paymentsList: [],
-      page: 0,
+      //paymentsList: [],
     };
   },
   methods: {
-    addNewPaymentDate(value) {
-      console.log(value);
-      this.paymentsList = [...this.paymentsList, value];
-    },
+    ...mapMutations(["setPaymentsListData"]),
+    // addNewPaymentDate(value) {
+    //  this.paymentsList = [...this.paymentsList, value];
+    //},
     fetchData() {
       return [
         {
@@ -56,10 +57,16 @@ export default {
       ];
     },
   },
-  created() {
-    this.$store.commit("setPaymentsListData", this.fetchData());
+  computed: {
+    paymentList() {
+      return this.$store.getters.getPaymentsList;
+    },
+  },
 
+  created() {
+    //this.$store.commit("setPaymentsListData", this.fetchData());
     //this.paymentsList = this.fetchData();
+    this.setPaymentsListData(this.fetchData());
   },
 };
 </script>

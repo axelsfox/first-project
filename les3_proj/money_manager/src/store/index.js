@@ -12,8 +12,19 @@ export default new Vuex.Store({
     setPaymentsListData (state, payload) {
       state.paymentsList = payload
     },
+    addNewPamenttoStore(state, payload) {
+      state.paymentsList.push(payload)
+    }
   
   },
+  getters: { 
+    getPaymentsList: state => state.paymentsList,
+ 
+    getFullPaymentValue: state => {
+      return state.paymentsList.reduce((res, cur) => res + cur.value, 0)
+    },
+  },
+
   actions: {
   },
   modules: {

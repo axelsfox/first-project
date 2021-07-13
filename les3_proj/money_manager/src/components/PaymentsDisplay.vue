@@ -13,6 +13,12 @@
         <td>{{ item.category }}</td>
         <td>{{ item.value }}</td>
       </tr>
+      <tr class="table__item">
+        <td>Итого</td>
+        <td></td>
+        <td></td>
+        <td>{{ getFPV }}</td>
+      </tr>
     </table>
   </div>
 </template>
@@ -20,31 +26,17 @@
 <script>
 export default {
   name: "PaymentsDisplay",
-  data() {
-    return {
-      filteredpages: [],
-    };
-  },
   props: {
     items: {
       type: Array,
       default: () => [],
     },
-    page: {
-      type: Number,
-      default: 1,
+  },
+  computed: {
+    getFPV() {
+      return this.$store.getters.getFullPaymentValue;
     },
   },
-  //methods: {
-  //  newPages(value) {
-  //    let j = 5;
-  //    let i = j - 5;
-  //    for (i; i <= j; i++) {
-  //      this.filteredpages.push(value[i]);
-  //    }
-  //    return this.filteredpages;
-  //  },
-  //},
 };
 </script>
  
