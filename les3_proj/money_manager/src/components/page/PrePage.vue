@@ -1,27 +1,8 @@
 <template>
   <div class="container">
-    <div class="fast__pay">
-      <button class="fast__pay_btn">
-        <router-link to="/add/payment/Food/value/200" class="fast__pay_ref">
-          Food 200
-        </router-link>
-      </button>
-      <button class="fast__pay_btn">
-        <router-link to="/add/payment/Transport/value/50" class="fast__pay_ref">
-          Transport 50
-        </router-link>
-      </button>
-      <button class="fast__pay_btn">
-        <router-link
-          to="/add/payment/Entertainment/value/2000"
-          class="fast__pay_ref"
-        >
-          Entertainment 2000
-        </router-link>
-      </button>
-    </div>
-    <button @click="show = !show" class="addNewcost">ADD NEW COST +</button>
-    <div class="payment-form" v-if="show">
+    <button class="addNewcost">ADD NEW COST +</button>
+
+    <div class="payment-form">
       <input
         class="payment-form_type"
         placeholder="Количество"
@@ -36,9 +17,9 @@
       />
       <input
         class="payment-form_type"
-        placeholder="Дата"
         type="text"
         v-model.number="date"
+        :placeholder="getDate"
       />
 
       <button @click="onClick" class="svbtn">ADD +</button>
@@ -48,13 +29,12 @@
 
 <script>
 export default {
-  name: "AddPaymentForm",
+  name: "PrePage",
   data() {
     return {
-      value: 0,
-      category: "",
+      value: Number(this.$route.params.value),
+      category: this.$route.params.category,
       date: "",
-      show: false,
     };
   },
   methods: {
@@ -72,8 +52,17 @@ export default {
         category,
         date: this.date || this.getCurrentDate(),
       };
-      console.log(data);
+      console.log("кнопка жива");
       this.$store.commit("addNewPamenttoStore", data);
+    },
+  },
+  computed: {
+    getDate() {
+      const today = new Date();
+      const d = today.getDate();
+      const m = today.getMonth() + 1;
+      const y = today.getFullYear();
+      return `${d}.${m}.${y}`;
     },
   },
 };
@@ -124,7 +113,6 @@ export default {
 .fast__pay {
   box-sizing: border-box;
   text-align: left;
-  width: auto;
 }
 .fast__pay_btn {
   width: 150px;

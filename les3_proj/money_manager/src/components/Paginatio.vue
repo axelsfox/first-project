@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: "AddPaymentForm",
+  name: "Pagination",
+  props: 
   data() {
     return {};
   },
