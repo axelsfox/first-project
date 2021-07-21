@@ -79,7 +79,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .container {
   margin: 30px;
   box-sizing: border-box;

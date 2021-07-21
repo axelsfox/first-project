@@ -1,8 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="header">Add New Payment</div>
+    <div class="header">{{ settings.header }}</div>
     <div class="content">
-      <AddPaymentForm />
+      <AddPaymentForm v-if="settings.compName === 'add'" />
+      <Auth v-if="settings.compName === 'auth'" />
     </div>
     <div class="footer">
       <button @click="onCloseClick">Close</button>
@@ -12,10 +13,18 @@
 
 <script>
 import AddPaymentForm from "./AddPaymentForm.vue";
+import Auth from "./Auth.vue";
+
 export default {
   name: "ModalWindow",
   components: {
     AddPaymentForm,
+    Auth,
+  },
+  props: {
+    settings: {
+      type: Object,
+    },
   },
   methods: {
     onCloseClick() {
@@ -25,7 +34,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .wrapper {
   position: absolute;
   background: aliceblue;

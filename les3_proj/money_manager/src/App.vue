@@ -4,7 +4,14 @@
       <div>
         <a href="#" @click="goToPage('dashboard')">Dashdoard</a>
         <a href="#" @click="goToPage('about')">About</a>
-
+        <button class="main__add_form" @click="addFormShow = true">
+          Add New Cost +
+        </button>
+        <ModalWindow
+          v-if="addFormShow"
+          @close="addFormShow = !addFormShow"
+          :settings="settings"
+        />
         <!--<router-link to="/dashboard"> Dashboard </router-link>
         <router-link to="/about"> About </router-link>-->
         <!--<a href="#Dasboard">Dashboard</a>
@@ -31,10 +38,12 @@
 //import PageAbout from "./components/page/PageAbout.vue";
 //import PageDashboard from "./components/page/PageDashboard.vue";
 //import Page404 from "./components/page/Page404.vue";
+import ModalWindow from "./components/ModalWindow.vue";
 
 export default {
   name: "App",
   components: {
+    ModalWindow,
     //PaymentsDisplay,
     //AddPaymentForm,
     //PageAbout,
@@ -44,6 +53,11 @@ export default {
   data() {
     return {
       //  paymentsList: [],
+      addFormShow: false,
+      settings: {
+        header: "Add u Cost",
+        compName: "add",
+      },
     };
   },
   methods: {
@@ -106,7 +120,7 @@ export default {
 };
 </script>
 
- <style>
+ <style scoped lang="scss">
 .header {
   margin: 0px 30px;
   color: black;
@@ -120,5 +134,10 @@ export default {
   text-decoration: none;
   color: rgb(1, 104, 56);
   margin: 10px;
+}
+.main__add_form {
+  background-color: transparent;
+  border: transparent;
+  color: rgb(1, 104, 56);
 }
 </style>

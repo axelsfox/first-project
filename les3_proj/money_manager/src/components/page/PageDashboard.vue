@@ -1,8 +1,6 @@
 <template>
   <div class="dashboard__container">
     <!--<AddPaymentForm />-->
-    <button @click="addFormShow = true">ADD NEW COST +</button>
-    <ModalWindow v-if="addFormShow" @close="addFormShow = !addFormShow" />
     <PaymentsDisplay :items="paymentList" />
   </div>
 </template>
@@ -11,19 +9,15 @@
 import { mapActions, mapMutations } from "vuex";
 import PaymentsDisplay from "../PaymentsDisplay.vue";
 //import AddPaymentForm from "../AddPaymentForm.vue";
-import ModalWindow from "../ModalWindow.vue";
 
 export default {
   name: "PageDashboard",
   components: {
     PaymentsDisplay,
     //AddPaymentForm,
-    ModalWindow,
   },
   data() {
-    return {
-      addFormShow: false,
-    };
+    return {};
   },
 
   methods: {
