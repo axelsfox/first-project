@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import AddPaymentForm from "AddPaymentForm.vue";
+import AddPaymentForm from "./AddPaymentForm.vue";
 export default {
   name: "ModalWindow",
   components: {
@@ -26,4 +26,9 @@ export default {
 </script>
 
 <style>
+.wrapper {
+  position: absolute;
+  background: aliceblue;
+  left: 30%;
+}
 </style>

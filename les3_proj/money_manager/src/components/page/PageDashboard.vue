@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard__container">
     <!--<AddPaymentForm />-->
-    <ModalWindow v-if="addFormShow" @close="addFormShow = !addFormShow" />
     <button @click="addFormShow = true">ADD NEW COST +</button>
+    <ModalWindow v-if="addFormShow" @close="addFormShow = !addFormShow" />
     <PaymentsDisplay :items="paymentList" />
   </div>
 </template>

@@ -31,7 +31,7 @@ export default new Vuex.Store({
 actions: {
    
   //пример с урока
-  fetchData ({ commit }){
+ /* fetchData ({ commit }){
       return new Promise((resolve)=>{
         setTimeout(()=>{
           const items = []
@@ -48,7 +48,7 @@ actions: {
       })
       .then (res=> commit('setPaymentsListData', res))
     }
-
+*/
 
          
      },

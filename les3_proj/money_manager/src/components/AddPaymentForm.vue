@@ -20,8 +20,8 @@
         </router-link>
       </button>
     </div>
-    <button @click="show = !show" class="addNewcost">ADD NEW COST +</button>
-    <div class="payment-form" v-if="show">
+    <!--<button @click="show = !show" class="addNewcost">ADD NEW COST +</button>-->
+    <div class="payment-form">
       <input
         class="payment-form_type"
         placeholder="Количество"
@@ -54,7 +54,7 @@ export default {
       value: 0,
       category: "",
       date: "",
-      show: false,
+      // show: false,
     };
   },
   methods: {
