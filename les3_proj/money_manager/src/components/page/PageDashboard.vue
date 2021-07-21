@@ -45,6 +45,9 @@ export default {
       this.fetchListData();
     }
   },
+  mounted() {
+    this.$modal.show();
+  },
 };
 </script>
 

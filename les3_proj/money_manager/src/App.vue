@@ -7,11 +7,7 @@
         <button class="main__add_form" @click="addFormShow = true">
           Add New Cost +
         </button>
-        <ModalWindow
-          v-if="addFormShow"
-          @close="addFormShow = !addFormShow"
-          :settings="settings"
-        />
+        <ModalWindow v-if="ModalWindowName" :settings="settings" />
         <!--<router-link to="/dashboard"> Dashboard </router-link>
         <router-link to="/about"> About </router-link>-->
         <!--<a href="#Dasboard">Dashboard</a>
@@ -53,11 +49,8 @@ export default {
   data() {
     return {
       //  paymentsList: [],
-      addFormShow: false,
-      settings: {
-        header: "Add u Cost",
-        compName: "add",
-      },
+      ModalWindowName: "",
+      settings: {},
     };
   },
   methods: {
@@ -65,6 +58,14 @@ export default {
       this.$router.push({
         name: page,
       });
+    },
+    onShow(settings) {
+      this.ModalWindowName = settings.name;
+      this.settings = settings;
+    },
+    onHide() {
+      this.ModalWindowName = "";
+      this.settings = {};
     },
 
     //...mapMutations(["setPaymentsListData"]),
@@ -116,6 +117,10 @@ export default {
     //this.setPaymentsListData(this.fetchData());
     //  this.fetchData();
     // },
+  },
+  mounted() {
+    this.$modal.EvenBus.$on("show", this.onShow);
+    this.$modal.EvenBus.$on("hide", this.onHide);
   },
 };
 </script>
