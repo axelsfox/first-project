@@ -1,10 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="header">{{ settings.header }}</div>
-    <div class="content">
-      <AddPaymentForm v-if="settings.compName === 'add'" />
-      <Auth v-if="settings.compName === 'auth'" />
-    </div>
+    <div class="content"><component :is="settings.compName" /></div>
     <div class="footer">
       <button @click="onCloseClick">Close</button>
     </div>
@@ -28,7 +25,7 @@ export default {
   },
   methods: {
     onCloseClick() {
-      this.$emit("close");
+      this.$modal.hide();
     },
   },
 };

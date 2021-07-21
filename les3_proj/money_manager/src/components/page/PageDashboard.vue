@@ -2,6 +2,9 @@
   <div class="dashboard__container">
     <!--<AddPaymentForm />-->
     <PaymentsDisplay :items="paymentList" />
+    <button class="main__add_form" @click="showPaymentsForm">
+      Add New Cost +
+    </button>
   </div>
 </template>
 
@@ -33,6 +36,13 @@ export default {
         name: page,
       });
     },
+
+    showPaymentsForm() {
+      this.$modal.show("add", {
+        header: "Add u Cost",
+        compName: "AddPaymentForm",
+      });
+    },
   },
   computed: {
     paymentList() {
@@ -44,9 +54,6 @@ export default {
     if (!this.fetchListData.length) {
       this.fetchListData();
     }
-  },
-  mounted() {
-    this.$modal.show();
   },
 };
 </script>

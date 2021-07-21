@@ -4,9 +4,9 @@
       <div>
         <a href="#" @click="goToPage('dashboard')">Dashdoard</a>
         <a href="#" @click="goToPage('about')">About</a>
-        <button class="main__add_form" @click="addFormShow = true">
+        <!--<button class="main__add_form" @click="addFormShow = true">
           Add New Cost +
-        </button>
+        </button>-->
         <ModalWindow v-if="ModalWindowName" :settings="settings" />
         <!--<router-link to="/dashboard"> Dashboard </router-link>
         <router-link to="/about"> About </router-link>-->
@@ -61,7 +61,7 @@ export default {
     },
     onShow(settings) {
       this.ModalWindowName = settings.name;
-      this.settings = settings;
+      this.settings = settings.settings;
     },
     onHide() {
       this.ModalWindowName = "";
@@ -119,8 +119,8 @@ export default {
     // },
   },
   mounted() {
-    this.$modal.EvenBus.$on("show", this.onShow);
-    this.$modal.EvenBus.$on("hide", this.onHide);
+    this.$modal.EventBus.$on("show", this.onShow);
+    this.$modal.EventBus.$on("hide", this.onHide);
   },
 };
 </script>

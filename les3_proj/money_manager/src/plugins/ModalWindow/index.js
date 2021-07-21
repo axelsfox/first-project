@@ -7,14 +7,14 @@ export default {
         this.installed = true;
 
         Vue.prototype.$modal = {
-            EvenBus: new Vue(),
+            EventBus: new Vue(),
 
             show(name, settings){
-                this.EvenBus.$emit('show', {name, settings})
+                this.EventBus.$emit('show', {name, settings})
                
             },
             hide(){
-                this.EvenBus.$emit('hide');
+                this.EventBus.$emit('hide');
             }
 
         }
