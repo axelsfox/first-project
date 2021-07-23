@@ -7,7 +7,9 @@
         <!--<button class="main__add_form" @click="addFormShow = true">
           Add New Cost +
         </button>-->
-        <ModalWindow v-if="ModalWindowName" :settings="settings" />
+        <transition name="fade">
+          <ModalWindow v-if="ModalWindowName" :settings="settings" />
+        </transition>
         <!--<router-link to="/dashboard"> Dashboard </router-link>
         <router-link to="/about"> About </router-link>-->
         <!--<a href="#Dasboard">Dashboard</a>
@@ -34,12 +36,11 @@
 //import PageAbout from "./components/page/PageAbout.vue";
 //import PageDashboard from "./components/page/PageDashboard.vue";
 //import Page404 from "./components/page/Page404.vue";
-import ModalWindow from "./components/ModalWindow.vue";
 
 export default {
   name: "App",
   components: {
-    ModalWindow,
+    ModalWindow: () => import("./components/ModalWindow.vue"),
     //PaymentsDisplay,
     //AddPaymentForm,
     //PageAbout,
@@ -144,5 +145,15 @@ export default {
   background-color: transparent;
   border: transparent;
   color: rgb(1, 104, 56);
+}
+</style>
+<style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  transition: opacity 0;
 }
 </style>

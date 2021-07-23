@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PageDashboard from '../components/page/PageDashboard.vue'
-import PageAbout from '../components/page/PageAbout.vue'
-import Page404 from '../components/page/Page404.vue'
-import PrePage from '../components/page/PrePage.vue'
+//import PageDashboard from '../components/page/PageDashboard.vue'
+//import PageAbout from '../components/page/PageAbout.vue'
+//import Page404 from '../components/page/Page404.vue'
+//import PrePage from '../components/page/PrePage.vue'
 //import AddPaymentForm from '../components/AddPaymentForm.vue'
 
 
@@ -15,21 +15,21 @@ export default new Router({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: PageDashboard
+      component: () => import('../components/page/PageDashboard.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: PageAbout
+      component:  () => import('../components/page/PageAbout.vue')
     },
     {
       path: '/add/payment/:category/value/:value',
       name: 'category',
-      component: PrePage
+      component:  () => import('../components/page/PrePage.vue')
     },
     {
       path: "*",
-      component: Page404
+      component:  () => import('../components/page/Page404.vue')
     }
   ]
 
