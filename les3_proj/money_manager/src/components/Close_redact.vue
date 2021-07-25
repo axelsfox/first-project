@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-bind:style="{ top: , left: }">
     <div class="small_menu">
       <img class="redact_menu" src="../assets/pencil.svg" alt="редактировать" />
       <a href="">Редактировать</a>
@@ -16,7 +16,6 @@
 <script>
 export default {
   name: "RedactWindow",
-  components: {},
   props: {
     settings: {
       type: Object,

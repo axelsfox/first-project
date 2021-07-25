@@ -34,6 +34,7 @@
 <script>
 export default {
   name: "PaymentsDisplay",
+
   props: {
     items: {
       type: Array,
@@ -42,12 +43,11 @@ export default {
   },
   methods: {
     smallmenu(event) {
-      const smalMenuSet = {
-        id: event.id,
+      const smallmenuSet = {
         x: event.pageX,
         y: event.pageY,
       };
-      console.log(smalMenuSet);
+      console.log(smallmenuSet);
     },
   },
 
