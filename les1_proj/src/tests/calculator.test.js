@@ -134,12 +134,16 @@ expect(wrapper.vm.operand1).toBe(1)
     describe('Calculator Keyboard Tests', () => {
       it('Test boardButton mess', async () => {
         const wrapper = mount(Calculator);
-        const radioInput = wrapper.find('input[type="radio"]')
-        await radioInput.setChecked()
+        //const radioInput = wrapper.find('input[type="radio"]')
+        //await radioInput.setChecked()
+
+        checkboxInput.element.checked = checked
+checkboxInput.trigger('click')
+checkboxInput.trigger('change')
         
         const key1BBtn = wrapper.find('button[name="1"]')
         key1BBtn.trigger('click')
-        
+
         const key2BBtn = wrapper.find('button[name="2"]')
         key2BBtn.trigger('click')
     
