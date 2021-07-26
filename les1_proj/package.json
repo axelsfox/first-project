@@ -5,15 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "jest"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.8",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -22,10 +21,8 @@
     "babel-jest": "^27.0.6",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "jest": "^27.0.6",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.11"
   },
   "jest": {
@@ -35,7 +32,12 @@
     ],
     "transform": {
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
-     "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
-    }
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ]
   }
 }
