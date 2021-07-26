@@ -30,6 +30,7 @@
         v-for="screenkey in screenkeyboard"
         :key="screenkey"
         @click="boardButton(screenkey)"
+        :name="screenkey"
       >
         {{ screenkey }}
       </button>

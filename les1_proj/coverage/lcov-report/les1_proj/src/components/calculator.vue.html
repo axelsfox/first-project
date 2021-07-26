@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/24</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.08% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/13</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/10</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/24</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -326,7 +326,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -343,9 +344,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -353,6 +351,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -362,12 +363,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -381,13 +379,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -473,6 +473,7 @@
         v-for="screenkey in screenkeyboard"
         :key="screenkey"
         @click="boardButton(screenkey)"
+        :name="screenkey"
       &gt;
         {{ screenkey }}
       &lt;/button&gt;
@@ -517,8 +518,8 @@
 &lt;script&gt;
 export default {
   name: "Calculator",
-  data() {
-    return {
+<span class="fstat-no" title="function not covered" >  data() {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       operand1: "",
       operand2: "",
       field: true,
@@ -534,8 +535,8 @@ export default {
 <span class="fstat-no" title="function not covered" >    boardButton(button) {</span>
 <span class="cstat-no" title="statement not covered" >      this.field ? (this.operand1 += button) : (this.operand2 += button);</span>
     },
-    summary() {
-      this.result = Number(this.operand1) + Number(this.operand2);
+<span class="fstat-no" title="function not covered" >    summary() {</span>
+<span class="cstat-no" title="statement not covered" >      this.result = Number(this.operand1) + Number(this.operand2);</span>
     },
 <span class="fstat-no" title="function not covered" >    subtraction() {</span>
 <span class="cstat-no" title="statement not covered" >      this.result = this.operand1 - this.operand2;</span>
@@ -554,26 +555,26 @@ export default {
 <span class="cstat-no" title="statement not covered" >      this.result = this.operand1 ** this.operand2;</span>
     },
 &nbsp;
-    calculate(operation = "+") {
-      this.error = "";
-      switch (operation) {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    calculate(operation = "+") {</span></span>
+<span class="cstat-no" title="statement not covered" >      this.error = "";</span>
+<span class="cstat-no" title="statement not covered" >      switch (operation) {</span>
         case "+":
-          this.summary();
-          break;
-<span class="branch-1 cbranch-no" title="branch not covered" >        case "-":</span>
+<span class="cstat-no" title="statement not covered" >          this.summary();</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        case "-":
 <span class="cstat-no" title="statement not covered" >          this.subtraction();</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-2 cbranch-no" title="branch not covered" >        case "*":</span>
+        case "*":
 <span class="cstat-no" title="statement not covered" >          this.multiply();</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-3 cbranch-no" title="branch not covered" >        case "/":</span>
+        case "/":
 <span class="cstat-no" title="statement not covered" >          this.division();</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
-<span class="branch-4 cbranch-no" title="branch not covered" >        case "^":</span>
+        case "^":
 <span class="cstat-no" title="statement not covered" >          this.exponentiation();</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
       }
-      this.logs[
+<span class="cstat-no" title="statement not covered" >      this.logs[</span>
         Date.now()
       ] = `${this.operand1}${operation}${this.operand2}=${this.result}`;
     },
@@ -582,7 +583,6 @@ export default {
         ? (this.operand1 = this.operand1.slice(0, -1))
         : (this.operand2 = this.operand2.slice(0, -1));
     },
-<span class="fstat-no" title="function not covered" >    somesimple() {},</span>
   },
 };
 &lt;/script&gt;
@@ -640,7 +640,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jul 26 2021 07:07:39 GMT+0300 (Москва, стандартное время)
+                at Mon Jul 26 2021 15:44:21 GMT+0300 (Москва, стандартное время)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
