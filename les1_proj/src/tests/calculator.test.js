@@ -145,16 +145,16 @@ expect(wrapper.vm.operand1).toBe(1)
 
 
 
-        //const key1BBtn = wrapper.find('button[name="1"]')
-       // key1BBtn.trigger('click')
+        const key1BBtn = wrapper.find('button[name="1"]')
+       key1BBtn.trigger('click')
 
-        //const key2BBtn = wrapper.find('button[name="2"]')
-        //key2BBtn.trigger('click')
+        const key2BBtn = wrapper.find('button[name="2"]')
+        key2BBtn.trigger('click')
     
       
-     // expect(wrapper.vm.operand1).toBe(12)   
+     expect(wrapper.vm.operand1).toBe(12)   
      //expect(radioInput.element.checked).toBeTruthy()
-     expect(wrapper.vm.screenkey).toContain(1)   
+       
          })  
   
       })
