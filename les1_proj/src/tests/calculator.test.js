@@ -135,7 +135,7 @@ expect(wrapper.vm.operand1).toBe(1)
       it('Test boardButton mess', async () => {
         const wrapper = mount(Calculator);
         const radioInputs = wrapper.find('button[name="screenKeyB"]');
-        radioInputs.at(0).simulate('click', { target: { checked: true } });
+        radioInputs.simulate('click', { target: { checked: true } });
         const key1BBtn = wrapper.find('button[name="1"]')
         key1BBtn.trigger('click')
         const key2BBtn = wrapper.find('button[name="2"]')
