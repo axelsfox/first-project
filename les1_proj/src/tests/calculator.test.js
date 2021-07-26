@@ -154,7 +154,7 @@ expect(wrapper.vm.operand1).toBe(1)
       
      // expect(wrapper.vm.operand1).toBe(12)   
      //expect(radioInput.element.checked).toBeTruthy()
-     expect(radioInput.element.checked).toBeTruthy()
+     expect(wrapper.vm.screenkey).toContain(1)   
          })  
   
       })
