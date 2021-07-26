@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Calculator from '../components/calculator.vue'
 import 'regenerator-runtime/runtime'
-//import { Radio } from '@material-ui/core';
+
  
 describe('Calculator Test', () => {
  it('Test operand1 input value', async () => {
@@ -134,7 +134,7 @@ expect(wrapper.vm.operand1).toBe(1)
     describe('Calculator Keyboard Tests', () => {
       it('Test boardButton mess', async () => {
         const wrapper = mount(Calculator);
-        const radioInputs = wrapper.find(Radio);
+        const radioInputs = wrapper.find('button[name="screenKeyB"]');
         radioInputs.at(0).simulate('click', { target: { checked: true } });
         const key1BBtn = wrapper.find('button[name="1"]')
         key1BBtn.trigger('click')

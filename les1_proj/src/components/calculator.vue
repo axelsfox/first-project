@@ -20,7 +20,12 @@
 
     <!--домашняя работа-->
     <div>
-      <input type="checkbox" id="checkbox" v-model="checked" />
+      <input
+        name="screenKeyB"
+        type="checkbox"
+        id="checkbox"
+        v-model="checked"
+      />
       <label for="checkbox">Показать экранную клавиатуру</label>
     </div>
 
