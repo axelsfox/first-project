@@ -133,9 +133,17 @@ expect(wrapper.vm.operand1).toBe(1)
 
     describe('Calculator Keyboard Tests', () => {
       it('Test boardButton mess', async () => {
-        const wrapper = mount(Calculator);
-        const radioInput = wrapper.find('input[type="radio"]')
-        await radioInput.setChecked()
+
+
+        const wrapper = mount(Calculator, {
+          propsData: {
+            checked: true,
+          }
+        });
+       // const radioInput = wrapper.find('input[type="radio"]')
+       // await radioInput.setChecked()
+
+
 
         //const key1BBtn = wrapper.find('button[name="1"]')
        // key1BBtn.trigger('click')
@@ -145,8 +153,8 @@ expect(wrapper.vm.operand1).toBe(1)
     
       
      // expect(wrapper.vm.operand1).toBe(12)   
+     //expect(radioInput.element.checked).toBeTruthy()
      expect(radioInput.element.checked).toBeTruthy()
-    
          })  
   
       })
