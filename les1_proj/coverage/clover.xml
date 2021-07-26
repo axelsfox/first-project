@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1627309924293" clover="3.2.0">
-  <project timestamp="1627309924293" name="All files">
-    <metrics statements="137" coveredstatements="22" conditionals="340" coveredconditionals="9" methods="62" coveredmethods="7" elements="539" coveredelements="38" complexity="0" loc="137" ncloc="137" packages="4" files="8" classes="8"/>
+<coverage generated="1627312283587" clover="3.2.0">
+  <project timestamp="1627312283587" name="All files">
+    <metrics statements="137" coveredstatements="24" conditionals="340" coveredconditionals="11" methods="62" coveredmethods="9" elements="539" coveredelements="44" complexity="0" loc="137" ncloc="137" packages="4" files="8" classes="8"/>
     <package name="les1_proj">
       <metrics statements="2" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name=".eslintrc.js" path="D:\курсы\курс_программирования\Vue\vue_lessons\les1_proj\.eslintrc.js">
@@ -146,11 +146,11 @@
       </file>
     </package>
     <package name="les1_proj.src.components">
-      <metrics statements="24" coveredstatements="22" conditionals="13" coveredconditionals="9" methods="9" coveredmethods="7"/>
+      <metrics statements="24" coveredstatements="24" conditionals="13" coveredconditionals="11" methods="9" coveredmethods="9"/>
       <file name="calculator.vue" path="D:\курсы\курс_программирования\Vue\vue_lessons\les1_proj\src\components\calculator.vue">
-        <metrics statements="24" coveredstatements="22" conditionals="13" coveredconditionals="9" methods="9" coveredmethods="7"/>
-        <line num="84" count="9" type="stmt"/>
-        <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="24" coveredstatements="24" conditionals="13" coveredconditionals="11" methods="9" coveredmethods="9"/>
+        <line num="84" count="11" type="stmt"/>
+        <line num="98" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="101" count="1" type="stmt"/>
         <line num="104" count="1" type="stmt"/>
         <line num="107" count="1" type="stmt"/>
@@ -172,7 +172,7 @@
         <line num="136" count="1" type="stmt"/>
         <line num="137" count="1" type="stmt"/>
         <line num="139" count="6" type="stmt"/>
-        <line num="144" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="144" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
     </package>
   </project>

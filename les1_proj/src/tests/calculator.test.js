@@ -1,8 +1,6 @@
 import { mount } from '@vue/test-utils'
 import Calculator from '../components/calculator.vue'
 import 'regenerator-runtime/runtime'
-import { async } from 'regenerator-runtime/runtime'
-
  
 describe('Calculator Test', () => {
  it('Test operand1 input value', async () => {
@@ -114,6 +112,7 @@ expect(wrapper.vm.operand1).toBe(1)
              })
   })
  //При вводе нуля выведется ошибка
+
   describe('Calculator Messag Tests', () => {
     it('Test error mess', async () => {
       const wrapper = mount(Calculator);
@@ -133,22 +132,41 @@ expect(wrapper.vm.operand1).toBe(1)
     //Проверка работы метода экранной клавиатуры
 
     describe('Calculator Keyboard Tests', () => {
-      test('Test boardButton', async () => {
+      it('Test boardButton', async () => {
 
         const wrapper = mount(Calculator);
         const CheckInput = wrapper.find('input[type="checkbox"]')
         await CheckInput.setChecked()
-        
-        const Btn = wrapper.find('button[name="1"]')
-        Btn.trigger('click')
-     // const keyBtn = wrapper.find('button[name="CE"]')
-     // keyBtn.trigger('click')
 
-     expect(wrapper.vm.operand1).toBe(1)   
-     //expect(wrapper.vm.operand1).toBe(0)
-     //expect(CheckInput.element.checked).toBeTruthy()
+        const key1Btn = wrapper.find('button[name="1"]')
+        key1Btn.trigger('click')
+
+        const key2Btn = wrapper.find('button[name="2"]')
+        key2Btn.trigger('click')
+
+     expect(wrapper.vm.operand1).toBe("12")   
      
-       
          })  
+
+         it('Test delButton', async () => {
+
+          const wrapper = mount(Calculator);
+          const CheckInput = wrapper.find('input[type="checkbox"]')
+          await CheckInput.setChecked()
+  
+          const key5Btn = wrapper.find('button[name="5"]')
+        key5Btn.trigger('click')
+
+        const key3Btn = wrapper.find('button[name="3"]')
+        key3Btn.trigger('click')
+
+          const delBtn = wrapper.find('button[name="CE"]')
+          delBtn.trigger('click')
+  
+       expect(wrapper.vm.operand1).toBe("5")   
+       
+           })  
+    
   
       })
+ 
