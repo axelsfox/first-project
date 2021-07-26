@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Calculator from '../components/calculator.vue'
 import 'regenerator-runtime/runtime'
+import { async } from 'regenerator-runtime/runtime'
 
  
 describe('Calculator Test', () => {
@@ -132,28 +133,21 @@ expect(wrapper.vm.operand1).toBe(1)
     //Проверка работы метода экранной клавиатуры
 
     describe('Calculator Keyboard Tests', () => {
-      it('Test boardButton mess', async () => {
+      test('Test boardButton', async () => {
 
+        const wrapper = mount(Calculator);
+        const CheckInput = wrapper.find('input[type="checkbox"]')
+        await CheckInput.setChecked()
+        
+        const Btn = wrapper.find('button[name="1"]')
+        Btn.trigger('click')
+     // const keyBtn = wrapper.find('button[name="CE"]')
+     // keyBtn.trigger('click')
 
-        const wrapper = mount(Calculator, {
-          propsData: {
-            checked: true,
-          }
-        });
-       // const radioInput = wrapper.find('input[type="radio"]')
-       // await radioInput.setChecked()
-
-
-
-        const key1BBtn = wrapper.find('button[name="1"]')
-       key1BBtn.trigger('click')
-
-        const key2BBtn = wrapper.find('button[name="2"]')
-        key2BBtn.trigger('click')
-    
-      
-     expect(wrapper.vm.operand1).toBe(12)   
-     //expect(radioInput.element.checked).toBeTruthy()
+     expect(wrapper.vm.operand1).toBe(1)   
+     //expect(wrapper.vm.operand1).toBe(0)
+     //expect(CheckInput.element.checked).toBeTruthy()
+     
        
          })  
   

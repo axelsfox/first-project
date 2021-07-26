@@ -39,7 +39,7 @@
       >
         {{ screenkey }}
       </button>
-      <button class="onekey" @click="boardDelet">CE</button>
+      <button class="onekey" @click="boardDelet" name="CE">CE</button>
     </div>
     <input name="radioop" type="radio" id="one" :checked="field" />
     <label for="one">Значение 1</label>
