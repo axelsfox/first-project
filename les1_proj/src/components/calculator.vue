@@ -139,7 +139,6 @@ export default {
         ? (this.operand1 = this.operand1.slice(0, -1))
         : (this.operand2 = this.operand2.slice(0, -1));
     },
-    somesimple() {},
   },
 };
 </script>

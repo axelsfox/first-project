@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import Calculator from '../components/calculator.vue'
+import 'regenerator-runtime/runtime'
  
 describe('Calculator Test', () => {
  it('Test operand1 input value', async () => {
