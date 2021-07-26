@@ -7,6 +7,7 @@
       v-model.number.trim="operand1"
       type="text"
       placeholder="число 1"
+      name="operand1"
     />
     <input
       class="inputField"
@@ -14,6 +15,7 @@
       v-model.number.trim="operand2"
       type="text"
       placeholder="число 2"
+      name="operand2"
     />
 
     <!--домашняя работа-->
@@ -48,6 +50,7 @@
         :alt="operand"
         v-bind:title="operand"
         @click="calculate(operand)"
+        :name="operand"
       >
         {{ operand }}
       </button>
