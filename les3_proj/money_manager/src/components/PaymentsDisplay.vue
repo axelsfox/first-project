@@ -1,5 +1,19 @@
 <template>
-  <div class="List">
+  <v-container>
+    <v-row>
+      <v-col>#</v-col>
+      <v-col>Date</v-col>
+      <v-col>Category</v-col>
+      <v-col>Value</v-col>
+    </v-row>
+    <v-row v-for="(item, idx) in items" :key="idx">
+      <v-col>{{ idx }}</v-col>
+      <v-col>{{ item.date }}</v-col>
+      <v-col>{{ item.category }}</v-col>
+      <v-col>{{ item.value }}</v-col>
+    </v-row>
+  </v-container>
+  <!--<div class="List">
     <table class="main__table">
       <tr class="table__header">
         <th>#</th>
@@ -20,7 +34,7 @@
         <td>{{ getFPV }}</td>
       </tr>
     </table>
-  </div>
+  </div>-->
 </template>
  
 <script>
