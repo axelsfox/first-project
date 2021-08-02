@@ -1,40 +1,18 @@
 <template>
   <v-container>
     <v-row>
-      <v-col>#</v-col>
-      <v-col>Date</v-col>
-      <v-col>Category</v-col>
-      <v-col>Value</v-col>
+      <v-col :cols="1">#</v-col>
+      <v-col :cols="4">Date</v-col>
+      <v-col :cols="5">Category</v-col>
+      <v-col :cols="2">Value</v-col>
     </v-row>
     <v-row v-for="(item, idx) in items" :key="idx">
-      <v-col>{{ idx }}</v-col>
-      <v-col>{{ item.date }}</v-col>
-      <v-col>{{ item.category }}</v-col>
-      <v-col>{{ item.value }}</v-col>
+      <v-col :cols="1">{{ idx }}</v-col>
+      <v-col :cols="4">{{ item.date }}</v-col>
+      <v-col :cols="5">{{ item.category }}</v-col>
+      <v-col :cols="2">{{ item.value }}</v-col>
     </v-row>
   </v-container>
-  <!--<div class="List">
-    <table class="main__table">
-      <tr class="table__header">
-        <th>#</th>
-        <th>Date</th>
-        <th>Category</th>
-        <th>Value</th>
-      </tr>
-      <tr class="table__item" v-for="(item, idx) in items" :key="idx">
-        <td>{{ idx + 1 }}</td>
-        <td>{{ item.date }}</td>
-        <td>{{ item.category }}</td>
-        <td>{{ item.value }}</td>
-      </tr>
-      <tr class="table__item">
-        <td>Итого</td>
-        <td></td>
-        <td></td>
-        <td>{{ getFPV }}</td>
-      </tr>
-    </table>
-  </div>-->
 </template>
  
 <script>

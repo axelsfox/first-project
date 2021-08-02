@@ -1,22 +1,44 @@
 <template>
-  <div class="dashboard__container">
-    <AddPaymentForm />
-    <PaymentsDisplay :items="paymentList" />
-  </div>
+  <v-container>
+    <div class="text-h5 text-sm-h3 mb-8">My personal costs</div>
+    <v-row>
+      <v-col>
+        <v-dialog v-model="dialog">
+          <template v-slot:activator="{ on }">
+            <v-btn color="teal" dark v-on="on">
+              ADD NEW COST <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </template>
+          <v-card>
+            <!-- FUTURE CONTENT -->
+          </v-card>
+        </v-dialog>
+
+        <PaymentsDisplay :items="paymentList" />
+      </v-col>
+      <v-col>
+        <!-- <Diagram /> -->
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 import { mapActions, mapMutations } from "vuex";
 import PaymentsDisplay from "../PaymentsDisplay.vue";
-import AddPaymentForm from "../AddPaymentForm.vue";
+//import AddPaymentForm from "../AddPaymentForm.vue";
 
 export default {
   name: "PageDashboard",
   components: {
     PaymentsDisplay,
-    AddPaymentForm,
+    //AddPaymentForm,
   },
-
+  data() {
+    return {
+      dialog: false,
+    };
+  },
   methods: {
     ...mapMutations(["setPaymentsListData"]),
     ...mapActions({

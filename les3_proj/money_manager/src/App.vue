@@ -1,27 +1,13 @@
 <template>
-  <div id="app">
-    <div class="link-box">
-      <div>
-        <a href="#" @click="goToPage('dashboard')">Dashdoard</a>
-        <a href="#" @click="goToPage('about')">About</a>
-
-        <!--<router-link to="/dashboard"> Dashboard </router-link>
-        <router-link to="/about"> About </router-link>-->
-        <!--<a href="#Dasboard">Dashboard</a>
-        <a href="#About">About</a>
-        <a href="#Unknown">dev/null</a>-->
-      </div>
-    </div>
-    <h1>My personal costs</h1>
-    <div class="content">
+  <v-app>
+    <v-app-bar app flat>
+      <v-btn plain :ripple="false" to="/dashboard">Dashboard</v-btn>
+      <v-btn plain :ripple="false" to="/about">About</v-btn>
+    </v-app-bar>
+    <v-main>
       <router-view />
-      <!--<Page404 v-if="pageName === 'page404'" />
-      <PageAbout v-if="pageName === 'about'" />
-      <PageDashboard v-if="pageName === 'dasboard'" />-->
-      <!--<AddPaymentForm @addNewPayment="addNewPaymentDate" />-->
-    </div>
-    <div class="wrapper"></div>
-  </div>
+    </v-main>
+  </v-app>
 </template>
  
 <script>
@@ -107,18 +93,4 @@ export default {
 </script>
 
  <style>
-.header {
-  margin: 0px 30px;
-  color: black;
-  font-size: 18px;
-  text-align: left;
-}
-.link-box {
-  display: flex;
-}
-.link-box a {
-  text-decoration: none;
-  color: rgb(1, 104, 56);
-  margin: 10px;
-}
 </style>
