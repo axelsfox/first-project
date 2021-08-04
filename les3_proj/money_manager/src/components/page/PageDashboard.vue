@@ -11,13 +11,11 @@
 <script>
 import { mapActions, mapMutations } from "vuex";
 import PaymentsDisplay from "../PaymentsDisplay.vue";
-//import AddPaymentForm from "../AddPaymentForm.vue";
 
 export default {
   name: "PageDashboard",
   components: {
     PaymentsDisplay,
-    //AddPaymentForm,
   },
   data() {
     return {};
